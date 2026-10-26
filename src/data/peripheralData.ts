@@ -264,7 +264,7 @@ export const SCON_REGISTER: SpecialRegister = {
       position: 3,
       name: 'TB8',
       group: 'serial',
-      description: 'Transmit Bit 8. The 9th bit sent in modes 2/3 — commonly used as a parity bit (e.g. MOV TB8, P) or as the address/data marker in multi-processor schemes.',
+      description: 'Transmit Bit 8. The 9th bit sent in modes 2/3 — commonly used as a parity bit (e.g. MOV C, P followed by MOV TB8, C) or as the address/data marker in multi-processor schemes.',
     },
     {
       position: 2,
