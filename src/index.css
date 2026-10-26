@@ -1,0 +1,73 @@
+:root {
+  --bg-base: #ffffff;
+  --bg-surface: #f6faff;
+  --bg-surface-elevated: #eaf3ff;
+  --bg-surface-hover: #dcecff;
+  --bg-glass: rgba(255, 255, 255, 0.88);
+
+  --border-subtle: #dbeafe;
+  --border-medium: #bfdbfe;
+  --border-highlight: #38bdf8;
+
+  --accent-cyan: #0284c7;
+  --accent-cyan-light: #38bdf8;
+  --accent-cyan-dim: rgba(56, 189, 248, 0.14);
+  --accent-cyan-glow: rgba(56, 189, 248, 0.35);
+
+  --text-main: #1e3a8a;
+  --text-secondary: #334155;
+  --text-muted: #475569;
+  --text-dim: #64748b;
+
+  --badge-bg: rgba(56, 189, 248, 0.14);
+  --badge-border: rgba(14, 165, 233, 0.35);
+  --badge-text: #0369a1;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, Menlo, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+code, kbd, samp, pre {
+  font-family: var(--font-mono);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

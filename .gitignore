@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Built APK deliverables (regenerate with build-apk.ps1)
+apk/
+
+# TypeScript incremental build cache
+*.tsbuildinfo

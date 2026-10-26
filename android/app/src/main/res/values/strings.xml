@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">8051 Basics</string>
+    <string name="title_activity_main">8051 Basics</string>
+    <string name="package_name">com.vaibhav.mc8051</string>
+    <string name="custom_url_scheme">com.vaibhav.mc8051</string>
+</resources>
