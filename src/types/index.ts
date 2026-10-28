@@ -116,3 +116,50 @@ export interface BaudRateRow {
   smod: string;
   note: string;
 }
+
+/** Snapshot of the simulated microcontroller at one execution step */
+export interface SimState {
+  /** Register values as display hex, e.g. { A: 'C8H', PC: '0006H' } (null = not yet loaded) */
+  regs: Record<string, string | null>;
+  flags: { CY: 0 | 1; OV: 0 | 1; AC: 0 | 1 };
+  /** C variables (name + display hex) — shown instead of the register file for C programs */
+  vars?: { name: string; value: string }[];
+  /** Internal RAM cells for array programs */
+  mem?: { addr: string; value: number }[];
+  /** Highlighted memory cell index (for array scans) */
+  memIndex?: number;
+  /** Port P1 byte driving the LED strip (bits 7 → 0) */
+  p1?: number;
+  /** Buzzer output state */
+  buzzer?: boolean;
+  /** Console output accumulated so far */
+  output: string[];
+}
+
+/** One animated execution step */
+export interface SimStep {
+  /** 0-based code line to highlight */
+  line: number;
+  /** Human-readable explanation of the step */
+  label: string;
+  state: SimState;
+  /** When set, the animation jumps back to this step (infinite loop programs) */
+  loopTo?: number;
+}
+
+/** One language variant of a program (source + generated animation trace) */
+export interface ProgramVariant {
+  lang: 'asm' | 'c';
+  code: string[];
+  steps: SimStep[];
+}
+
+/** A complete program entry with assembly and C versions */
+export interface ProgramItem {
+  id: string;
+  title: string;
+  summary: string;
+  iconName: string;
+  asm: ProgramVariant;
+  c: ProgramVariant;
+}

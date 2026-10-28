@@ -57,6 +57,11 @@ export const Footer: React.FC<FooterProps> = ({ onScrollToTop, onNavigate }) => 
                   I/O Ports &amp; Serial Comm
                 </button>
               </li>
+              <li>
+                <button onClick={() => onNavigate('programs')} className="footer-btn">
+                  8051 Programs (Animated)
+                </button>
+              </li>
             </ul>
           </div>
 

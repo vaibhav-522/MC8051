@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cpu, BookOpen, Layers, HardDrive, Home, Terminal, Timer, Radio } from 'lucide-react';
+import { Cpu, BookOpen, Layers, HardDrive, Home, Terminal, Timer, Radio, Code } from 'lucide-react';
 import type { PageId } from '../App';
 
 interface HeaderProps {
@@ -15,6 +15,7 @@ const navItems: { id: PageId; label: string; icon: React.ReactNode }[] = [
   { id: 'instructions', label: 'Instruction Set', icon: <Terminal size={16} /> },
   { id: 'timers', label: 'Timers & IRQ', icon: <Timer size={16} /> },
   { id: 'io-serial', label: 'I/O & Serial', icon: <Radio size={16} /> },
+  { id: 'programs', label: 'Programs', icon: <Code size={16} /> },
 ];
 
 export const Header: React.FC<HeaderProps> = ({ onNavigate, activePage }) => {

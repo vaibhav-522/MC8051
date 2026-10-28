@@ -7,6 +7,7 @@ import { MemoryMapSection } from './components/MemoryMapSection';
 import { InstructionSetSection } from './components/InstructionSetSection';
 import { TimersSection } from './components/TimersSection';
 import { SerialIoSection } from './components/SerialIoSection';
+import { ProgramsSection } from './components/ProgramsSection';
 import { Footer } from './components/Footer';
 import './App.css';
 
@@ -17,7 +18,8 @@ export type PageId =
   | 'memory-map'
   | 'instructions'
   | 'timers'
-  | 'io-serial';
+  | 'io-serial'
+  | 'programs';
 
 export function App() {
   const [currentPage, setCurrentPage] = useState<PageId>('home');
@@ -63,6 +65,8 @@ export function App() {
         {currentPage === 'timers' && <TimersSection />}
 
         {currentPage === 'io-serial' && <SerialIoSection />}
+
+        {currentPage === 'programs' && <ProgramsSection />}
       </main>
 
       {/* Footer */}
